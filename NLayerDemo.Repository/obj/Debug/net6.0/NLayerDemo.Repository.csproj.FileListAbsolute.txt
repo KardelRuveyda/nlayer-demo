@@ -1,0 +1,17 @@
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\bin\Debug\net6.0\NLayerDemo.Repository.deps.json
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\bin\Debug\net6.0\NLayerDemo.Repository.runtimeconfig.json
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\bin\Debug\net6.0\NLayerDemo.Repository.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\bin\Debug\net6.0\ref\NLayerDemo.Repository.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\bin\Debug\net6.0\NLayerDemo.Repository.pdb
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\bin\Debug\net6.0\NLayerDemo.Core.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\bin\Debug\net6.0\NLayerDemo.Core.pdb
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.csproj.AssemblyReference.cache
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.AssemblyInfoInputs.cache
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.AssemblyInfo.cs
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.csproj.CoreCompileInputs.cache
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.csproj.CopyComplete
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\ref\NLayerDemo.Repository.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.pdb
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Repository\obj\Debug\net6.0\NLayerDemo.Repository.genruntimeconfig.cache

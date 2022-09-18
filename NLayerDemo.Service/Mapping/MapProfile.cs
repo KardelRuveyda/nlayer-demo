@@ -11,8 +11,6 @@ namespace NLayerDemo.Service.Mapping
     {
         public MapProfile()
         {
-            CreateMap<User, UserDto>().ReverseMap();
-            CreateMap<UserDto, User>();
         }
     }
 }

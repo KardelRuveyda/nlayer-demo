@@ -1,0 +1,12 @@
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\bin\Debug\net6.0\NLayerDemo.Core.deps.json
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\bin\Debug\net6.0\NLayerDemo.Core.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\bin\Debug\net6.0\ref\NLayerDemo.Core.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\bin\Debug\net6.0\NLayerDemo.Core.pdb
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\NLayerDemo.Core.csproj.AssemblyReference.cache
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\NLayerDemo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\NLayerDemo.Core.AssemblyInfoInputs.cache
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\NLayerDemo.Core.AssemblyInfo.cs
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\NLayerDemo.Core.csproj.CoreCompileInputs.cache
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\NLayerDemo.Core.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\ref\NLayerDemo.Core.dll
+C:\Projects\MyProjects\C#\NLayerDemo\NLayerDemo\NLayerDemo.Core\obj\Debug\net6.0\NLayerDemo.Core.pdb
