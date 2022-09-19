@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace NLayerDemo.API.Controllers
 {
-    public class CustomBaseController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CustomBaseController : ControllerBase
     {
         [NonAction]
         public IActionResult CreateActionResult<T>(GlobalResponseDto<T> response)

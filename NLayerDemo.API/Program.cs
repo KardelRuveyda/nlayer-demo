@@ -1,3 +1,5 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NLayerDemo.API.Filters;
+using NLayerDemo.API.Middlewares;
+using NLayerDemo.API.Modules;
 using NLayerDemo.Core.Repositories;
 using NLayerDemo.Core.Services;
 using NLayerDemo.Core.UnitOfWorks;
@@ -24,84 +29,49 @@ using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Bu filter bundan sonra eklenen ve varolan tüm controllerlar için geçerli olur. 
-// Sürekli Controllerlarýn baþýna eklemeye gerek kalmaz. 
-//services.AddControllers(options =>
-//{
-//    options.Filters.Add(new ValidateFilterAttribute()
-//        );
-//}).AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<MemberDtoValidator>());
+builder.Services.AddControllers(options => options.Filters.Add(new ValidateFilterAttribute()));
 
-// Fluent Validation'un kendi döndüðü filter pasif hale getirilir.
-//builder.Services.Configure<ApiBehaviorOptions>(options =>
-//{
-//    options.SuppressModelStateInvalidFilter = true;
-//});
-
-
-
-#region Swagger
-builder.Services.AddSwaggerGen(c =>
+builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Version = "1.0.0",
-        Title = "API Swagger",
-        Description = "Api Swagger Documentation",
-        TermsOfService = new Uri("http://swagger.io/terms/"),
-        Contact = new OpenApiContact
-        {
-            Name = "Kardel Rüveyda Çetin"
+    options.SuppressModelStateInvalidFilter = true;
 
-        }
-    });
 });
-#endregion
 
-#region Postgre
-builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(
-    builder.Configuration.GetConnectionString("PostgreLocalConnection"),
-    b => b.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name)
-    ));
-builder.Services.AddScoped<DbContext>(provider => provider.GetService<AppDbContext>());
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped(typeof(NotFoundFilter<>));
 builder.Services.AddAutoMapper(typeof(MapProfile));
+
+#region Postgre Baðlantýsý
+
+builder.Services.AddEntityFrameworkNpgsql()
+            .AddDbContext<AppDbContext>(opt =>
+            opt.UseNpgsql(builder.Configuration.GetConnectionString("LocalConnection")));
 #endregion
 
-builder.Services.AddMvc();
+builder.Host.UseServiceProviderFactory
+    (new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 var app = builder.Build();
 IWebHostEnvironment env = app.Environment;
 
-if (env.IsDevelopment())
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+app.UseCustomException();
 
-app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapGet("/auth", () => "This endpoint requires authorization")
-   .RequireAuthorization();
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
-
-#region Swagger Ýþlemleri
-app.UseSwagger();
-app.UseSwaggerUI(c =>
-{
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", " API V1");
-    c.RoutePrefix = string.Empty;
-});
-#endregion
-
+app.MapControllers();
 
 app.Run();
+

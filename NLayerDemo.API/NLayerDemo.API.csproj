@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.4.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -14,10 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NLayerDemo.Service\NLayerDemo.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="MiddleWares\" />
   </ItemGroup>
 
 
